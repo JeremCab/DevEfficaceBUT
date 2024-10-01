@@ -1,0 +1,43 @@
+Implémenter une table de hachage à adressage ouvert
+---------------------------------------------------
+
+On insère des nombres (clés) dans une table de hachage
+(pas de clés-valeurs ici...)
+
+* Implémenter une table de hachage (classe)
+
+- Attributs				- Méthodes
+
+  N: taille de la table			  insérer(c)
+  f: fonction de hachage		  	  ...
+  table : [None] * N
+  ...
+ 
+
+* 1 expérience
+
+- Table de taille N = 1023
+- fonction de hachage: f(c, i) = (c + i) mod N
+- Tirer N/2 = 512 entiers entre 0 et 10'000 sans remise (K = 10'000)
+- Insérer ces entiers 1 à 1 dans la table et
+  compter le nombre de collisions au fur et à mesure
+  (col = nombre cumulatif de collisions)
+
+  Exemple : insertion no 0: 0 collisions
+            insertion no 1: 0 collisions
+            ...
+            insertion no 3247: 128 collisions (jusqu'à maintenant)
+            ...
+
+* Répéter l'expérience 50 fois et faire la moyenne de col
+  (demander indications si besoin?)
+
+* Faire le graphe du nombre moyen de collisions au fur et à mesure 
+  des insertions
+
+* Répéter le processus avec:
+  fonction de hachage: f(c, i) = (c + 3*i^2 + i) mod N
+  fonction de hachage: f(c, i) = (c + 3*i^3 + 7*i^2 + 3*i) mod N
+  Ou d'autres fonctions...?
+
+* Rendre un petit rapport sous forme de jupyter notebook
